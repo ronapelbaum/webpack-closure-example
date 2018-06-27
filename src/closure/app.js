@@ -1,6 +1,8 @@
 goog.require('my.b');
 
-(function(){
+(function () {
     console.log('app:closure');
-    my.b()
+    my.b();
+    console.log('my', my);
+    console.log('global.my', global.my);
 })();

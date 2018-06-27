@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "app:es6": "node dist/es6.bundle.js",
-    "app:closure": "node dist/closure.bundle.js",
+    "app:closure.bundle": "node dist/closure.bundle.js",
+    "app:closure.compiled": "node dist/closure.compiled.js",
     "prestart": "npm run build",
-    "start": "npm run app:es6 && npm run app:closure",
+    "start": "npm run app:es6 && npm run app:closure.bundle && npm run app:closure.compiled",
     "clean": "rm -rf dist",
     "webpack": "webpack",
+    "closure": "java -jar closure-compiler-v20180610.jar  --js src/closure/*.js --js_output_file ./dist/closure.compiled.js",
     "prebuild": "npm run clean",
-    "build": "npm run webpack",
+    "build": "npm run webpack && npm run closure",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
