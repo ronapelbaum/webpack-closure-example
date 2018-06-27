@@ -1,0 +1,23 @@
+{
+  "name": "webpack-101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app:es6": "node dist/es6.bundle.js",
+    "app:closure": "node dist/closure.bundle.js",
+    "prestart": "npm run build",
+    "start": "npm run app:es6 && npm run app:closure",
+    "clean": "rm -rf dist",
+    "webpack": "webpack",
+    "prebuild": "npm run clean",
+    "build": "npm run webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "closure-loader": "^0.9.2",
+    "webpack": "^3.12.0"
+  }
+}
